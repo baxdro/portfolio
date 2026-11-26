@@ -1,18 +1,28 @@
 (() => {
+  'use strict';
+
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function splitTitle() {
+  const prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isCompact = matchMedia('(max-width: 760px), (pointer: coarse)');
+
+  let usingPointer = false;
+  document.addEventListener('pointerdown', () => { usingPointer = true; }, true);
+  document.addEventListener('keydown', () => { usingPointer = false; }, true);
+
+  function splitHeroTitle() {
     const title = $('.hero__title');
-    if (!title || reduced) return;
+    if (!title || prefersReducedMotion) return;
+
     const text = title.textContent.trim();
     title.setAttribute('aria-label', text);
     title.textContent = '';
+
     text.split(/\s+/).forEach((word, index) => {
-      if (index) title.append(' ');
+      if (index > 0) title.append(' ');
       const span = document.createElement('span');
-      span.className = 'w';
+      span.className = 'hero__word';
       span.setAttribute('aria-hidden', 'true');
       span.style.setProperty('--i', index);
       span.textContent = word;
@@ -20,93 +30,111 @@
     });
   }
 
-  function revealOnScroll() {
+  function setupReveal() {
+    $$('.stack__item').forEach((item, index) => item.style.setProperty('--i', index));
+
     const items = $$('.reveal');
-    if (reduced || !('IntersectionObserver' in window)) {
-      items.forEach((item) => item.classList.add('is-in'));
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      items.forEach((item) => item.classList.add('is-visible'));
       return;
     }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-in');
+        entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       });
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
     items.forEach((item) => observer.observe(item));
   }
 
-  function header() {
-    const bar = $('.site-header');
-    if (!bar) return;
+  function setupHeader() {
+    const header = $('.site-header');
+    if (!header) return;
+
     let lastY = window.scrollY;
 
     const update = () => {
       const y = window.scrollY;
-      bar.classList.toggle('is-scrolled', y > 24);
+      header.classList.toggle('is-scrolled', y > 24);
+
       if (y < 120) {
-        bar.classList.remove('is-hidden');
+        header.classList.remove('is-hidden');
         lastY = y;
         return;
       }
       if (Math.abs(y - lastY) < 8) return;
-      bar.classList.toggle('is-hidden', y > lastY && !bar.contains(document.activeElement));
+
+      const scrollingDown = y > lastY;
+      const hasFocus = header.contains(document.activeElement);
+      header.classList.toggle('is-hidden', scrollingDown && !hasFocus && !isCompact.matches);
       lastY = y;
     };
 
     update();
     window.addEventListener('scroll', update, { passive: true });
-    bar.addEventListener('focusin', () => bar.classList.remove('is-hidden'));
+    header.addEventListener('focusin', () => header.classList.remove('is-hidden'));
   }
 
-  function drawer() {
-    const dialog = $('#drawer');
-    const toggle = $('.burger');
-    if (!dialog || !toggle) return;
-    const sheet = $('.drawer__sheet', dialog);
-    let timer = 0;
+  function setupDrawer() {
+    const drawer = $('#drawer');
+    const trigger = $('.menu-button');
+    if (!drawer || !trigger) return;
+
+    const sheet = $('.drawer__sheet', drawer);
+    let fallbackTimer = 0;
 
     const open = () => {
-      clearTimeout(timer);
-      dialog.showModal();
-      requestAnimationFrame(() => requestAnimationFrame(() => dialog.classList.add('is-open')));
-      toggle.setAttribute('aria-expanded', 'true');
+      clearTimeout(fallbackTimer);
+      drawer.showModal();
+      requestAnimationFrame(() => requestAnimationFrame(() => drawer.classList.add('is-open')));
+      trigger.setAttribute('aria-expanded', 'true');
     };
 
-    const close = (then) => {
-      if (!dialog.open) return;
-      dialog.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-      let done = false;
+    const close = (onClosed) => {
+      if (!drawer.open) return;
+      drawer.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+
+      let finished = false;
       const finish = () => {
-        if (done) return;
-        done = true;
-        dialog.close();
-        if (typeof then === 'function') then();
+        if (finished) return;
+        finished = true;
+        drawer.close();
+        if (usingPointer) trigger.blur();
+        onClosed?.();
       };
-      sheet.addEventListener('transitionend', finish, { once: true });
-      timer = setTimeout(finish, 650);
+
+      const onTransitionEnd = (event) => {
+        if (event.target !== sheet || event.propertyName !== 'clip-path') return;
+        sheet.removeEventListener('transitionend', onTransitionEnd);
+        finish();
+      };
+      sheet.addEventListener('transitionend', onTransitionEnd);
+      fallbackTimer = setTimeout(finish, 700);
     };
 
-    toggle.addEventListener('click', open);
-    $('.drawer__close', dialog).addEventListener('click', close);
-    dialog.addEventListener('cancel', (event) => {
+    trigger.addEventListener('click', open);
+    $('.drawer__close', drawer).addEventListener('click', () => close());
+
+    drawer.addEventListener('cancel', (event) => {
       event.preventDefault();
       close();
     });
-    dialog.addEventListener('click', (event) => {
-      if (!sheet.contains(event.target)) close();
-    });
-    $$('.drawer__nav a', dialog).forEach((link) => {
+
+    $$('.drawer__nav a, .drawer__top .logo', drawer).forEach((link) => {
       link.addEventListener('click', (event) => {
         event.preventDefault();
-        close(() => { location.hash = link.getAttribute('href'); });
+        const target = link.getAttribute('href');
+        close(() => { location.hash = target; });
       });
     });
   }
 
-  splitTitle();
-  revealOnScroll();
-  header();
-  drawer();
+  splitHeroTitle();
+  setupReveal();
+  setupHeader();
+  setupDrawer();
 })();
