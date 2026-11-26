@@ -3,25 +3,42 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>baxdro | портфолио</title>
-  <meta name="description" content="Делаю быстрые и понятные сайты и веб-приложения, от первого наброска до запуска.">
-  <meta name="theme-color" content="#A6CFFF">
+  <title>baxdro | веб-разработчик: сайты и веб-приложения на заказ</title>
+  <meta name="description" content="Делаю сайты и веб-приложения на заказ: фронтенд и бэкенд, от первого наброска до запуска.">
+  <meta name="color-scheme" content="light dark">
+  <script>document.querySelector('meta[name="color-scheme"]').content = localStorage.getItem('color-scheme') ?? 'light dark';</script>
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#A6CFFF">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0C1330">
   <link rel="canonical" href="https://baxdro.tech/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="baxdro">
   <meta property="og:url" content="https://baxdro.tech/">
-  <meta property="og:title" content="baxdro | веб-разработчик">
-  <meta property="og:description" content="Делаю быстрые и понятные сайты и веб-приложения, от первого наброска до запуска.">
+  <meta property="og:title" content="baxdro | веб-разработчик: сайты и веб-приложения на заказ">
+  <meta property="og:description" content="Делаю сайты и веб-приложения на заказ: фронтенд и бэкенд, от первого наброска до запуска.">
   <meta property="og:image" content="https://baxdro.tech/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Первый экран сайта baxdro: «Делаю сайты с любовью»">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <link rel="preload" href="fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/onest-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=dd67aa6a">
-  <script>document.documentElement.classList.add('js')</script>
-  <script src="js/main.js?v=b5af7f97" defer></script>
+  <link rel="stylesheet" href="css/style.css?v=096a3751">
+  <script type="module" src="js/main.js?v=c9553428"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "baxdro",
+    "url": "https://baxdro.tech/",
+    "image": "https://baxdro.tech/img/photo.webp",
+    "jobTitle": "Веб-разработчик",
+    "description": "Делаю сайты и веб-приложения на заказ: фронтенд и бэкенд, от первого наброска до запуска.",
+    "sameAs": ["https://t.me/baxdro", "https://github.com/baxdro"]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">К содержимому</a>
@@ -31,6 +48,8 @@
     <symbol id="i-next" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></symbol>
     <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21.5 3.5 2.8 10.7c-.9.4-.9 1.6.1 1.9l4.6 1.5 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.5 4.8 3.5c.7.5 1.7.1 1.9-.8L22.9 4.9c.2-1-.6-1.8-1.4-1.4Z"/><path d="m7.5 14.1 9.6-6.3-6.4 7.4"/></symbol>
     <symbol id="i-gh" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
     <symbol id="l-html" viewBox="0 0 24 24"><path fill="#E34F26" d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></symbol>
@@ -53,31 +72,35 @@
         <a href="#about">Обо мне</a>
         <a href="#services">Услуги</a>
         <a href="#stack">Стек</a>
+        <a href="#faq">Вопросы</a>
         <a href="#contact">Контакты</a>
       </nav>
       <a class="logo" href="#top"><img class="logo__mark" src="img/logo.webp" alt="" width="32" height="32"><span>baxdro</span></a>
       <div class="site-header__actions">
+        <button class="icon-button theme-toggle" type="button" aria-label="Сменить тему" hidden><svg class="icon theme-toggle__moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="icon theme-toggle__sun" aria-hidden="true"><use href="#i-sun"/></svg></button>
         <a class="btn btn--glass btn--small" href="https://t.me/baxdro">Написать <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        <button class="icon-button menu-button" type="button" aria-label="Меню" aria-expanded="false" aria-controls="drawer"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+        <button class="icon-button menu-button" type="button" aria-label="Меню" aria-expanded="false" aria-controls="drawer" hidden><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
       </div>
     </div>
   </header>
 
   <dialog class="drawer" id="drawer" aria-label="Меню">
-    <div class="drawer__sheet" tabindex="-1" autofocus>
+    <div class="drawer__sheet">
       <div class="drawer__top">
         <a class="logo" href="#top"><img class="logo__mark" src="img/logo.webp" alt="" width="32" height="32"><span>baxdro</span></a>
-        <button class="icon-button drawer__close" type="button" aria-label="Закрыть меню"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+        <button class="icon-button drawer__close" type="button" aria-label="Закрыть меню" autofocus><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
       </div>
       <nav class="drawer__nav" aria-label="Разделы">
         <a href="#about">Обо мне</a>
         <a href="#services">Услуги</a>
         <a href="#stack">Стек</a>
+        <a href="#faq">Вопросы</a>
         <a href="#contact">Контакты</a>
       </nav>
       <div class="drawer__footer">
         <a class="btn btn--primary" href="https://t.me/baxdro">Написать <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         <ul class="socials">
+          <li><button class="theme-toggle" type="button" aria-label="Сменить тему"><svg class="icon theme-toggle__moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="icon theme-toggle__sun" aria-hidden="true"><use href="#i-sun"/></svg></button></li>
           <li><a href="https://t.me/baxdro" aria-label="Telegram"><svg class="icon" aria-hidden="true"><use href="#i-tg"/></svg></a></li>
           <li><a href="https://github.com/baxdro" aria-label="GitHub"><svg class="icon" aria-hidden="true"><use href="#i-gh"/></svg></a></li>
         </ul>
@@ -89,8 +112,13 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="sky" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="hero__content">
-        <h1 class="hero__title" id="hero-title">Делаю сайты, которые хочется трогать</h1>
-        <p class="hero__text">Я веб-разработчик. Беру проект с первого наброска и довожу до запуска.</p>
+        <h1 class="hero__title" id="hero-title" aria-label="Делаю сайты с любовью">
+          <span class="hero__word" aria-hidden="true">Делаю</span>
+          <span class="hero__word" aria-hidden="true">сайты</span>
+          <span class="hero__word" aria-hidden="true">с</span>
+          <span class="hero__word" aria-hidden="true">любовью</span>
+        </h1>
+        <p class="hero__text">Я вайб-кодер. Делаю фронтенд и бэкенд на заказ: от первого наброска до запуска.</p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="https://t.me/baxdro">Обсудить проект <svg class="icon" aria-hidden="true"><use href="#i-next"/></svg></a>
           <a class="btn" href="#services">Что я делаю <svg class="icon" aria-hidden="true"><use href="#i-next"/></svg></a>
@@ -101,27 +129,33 @@
           <a href="https://code.visualstudio.com" aria-label="VS Code" title="VS Code"><img src="img/vscode.svg" alt="" width="16" height="16"></a>
         </p>
       </div>
+      <div class="toys" aria-hidden="true">
+        <img class="toy toy--browser" src="img/toy-browser.webp" alt="" width="280" height="280">
+        <img class="toy toy--gear" src="img/toy-gear.webp" alt="" width="280" height="280">
+        <img class="toy toy--bag" src="img/toy-bag.webp" alt="" width="280" height="280">
+        <img class="toy toy--toggle" src="img/toy-toggle.webp" alt="" width="280" height="280">
+      </div>
     </section>
 
     <div class="panel">
-      <section class="section about" id="about" aria-label="Обо мне">
+      <section class="section about" id="about" aria-labelledby="about-title">
         <img class="about__photo reveal" src="img/photo.webp" alt="Аватар baxdro: кот у ростомера" width="480" height="480" loading="lazy">
-        <p class="about__statement reveal">Сайт должен быстро открываться и быть понятным с первого взгляда.</p>
+        <h2 class="about__statement reveal" id="about-title">Сайт должен быстро открываться и быть понятным с первого взгляда.</h2>
         <p class="about__text reveal">Могу взять проект целиком: структуру, вёрстку, анимации, серверную часть и запуск.</p>
         <a class="btn btn--primary reveal" href="https://t.me/baxdro">Написать мне <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </section>
 
       <section class="section section--band section--warm" id="services" aria-labelledby="services-title">
         <h2 class="section__title reveal" id="services-title">Что я делаю</h2>
-        <div class="card accordion reveal">
+        <div class="card accordion accordion--rich reveal">
           <details class="accordion__item">
             <summary class="accordion__summary">
-              <span class="accordion__icon accordion__icon--sky"><img src="img/clay-browser.webp" alt="" width="88" height="88" loading="lazy"></span>
-              <h3 class="accordion__title">Сайты и лендинги</h3>
+              <span class="accordion__icon accordion__icon--sky"><img src="img/toy-browser.webp" alt="" width="280" height="280" loading="lazy"></span>
+              <span class="accordion__title">Сайты и лендинги</span>
               <span class="accordion__toggle" aria-hidden="true"></span>
             </summary>
             <div class="accordion__body">
-              <p>Продумываю структуру и тексты, верстаю под любые экраны, настраиваю SEO и аналитику.</p>
+              <p>Одностраничники и многостраничные сайты: от идеи и первого наброска до работающей страницы.</p>
               <ul class="accordion__tags">
                 <li>Структура и тексты</li>
                 <li>Вёрстка под все экраны</li>
@@ -131,8 +165,8 @@
           </details>
           <details class="accordion__item">
             <summary class="accordion__summary">
-              <span class="accordion__icon accordion__icon--lilac"><img src="img/clay-toggle.webp" alt="" width="88" height="88" loading="lazy"></span>
-              <h3 class="accordion__title">Веб-приложения</h3>
+              <span class="accordion__icon accordion__icon--lilac"><img src="img/toy-toggle.webp" alt="" width="280" height="280" loading="lazy"></span>
+              <span class="accordion__title">Веб-приложения</span>
               <span class="accordion__toggle" aria-hidden="true"></span>
             </summary>
             <div class="accordion__body">
@@ -146,12 +180,12 @@
           </details>
           <details class="accordion__item">
             <summary class="accordion__summary">
-              <span class="accordion__icon accordion__icon--peach"><img src="img/clay-bag.webp" alt="" width="88" height="88" loading="lazy"></span>
-              <h3 class="accordion__title">Интернет-магазины</h3>
+              <span class="accordion__icon accordion__icon--peach"><img src="img/toy-bag.webp" alt="" width="280" height="280" loading="lazy"></span>
+              <span class="accordion__title">Интернет-магазины</span>
               <span class="accordion__toggle" aria-hidden="true"></span>
             </summary>
             <div class="accordion__body">
-              <p>Каталог, корзина, оплата, доставка и простая админка.</p>
+              <p>Магазин, в котором покупателю легко выбрать и оплатить, а вам легко обновлять товары.</p>
               <ul class="accordion__tags">
                 <li>Каталог и фильтры</li>
                 <li>Корзина и оплата</li>
@@ -161,12 +195,12 @@
           </details>
           <details class="accordion__item">
             <summary class="accordion__summary">
-              <span class="accordion__icon accordion__icon--lime"><img src="img/clay-gear.webp" alt="" width="88" height="88" loading="lazy"></span>
-              <h3 class="accordion__title">Поддержка и ускорение</h3>
+              <span class="accordion__icon accordion__icon--lime"><img src="img/toy-gear.webp" alt="" width="280" height="280" loading="lazy"></span>
+              <span class="accordion__title">Поддержка и ускорение</span>
               <span class="accordion__toggle" aria-hidden="true"></span>
             </summary>
             <div class="accordion__body">
-              <p>Ускоряю загрузку, исправляю вёрстку, обновляю дизайн и улучшаю доступность.</p>
+              <p>Привожу в порядок уже работающий сайт: когда он медленно открывается или ломается на телефоне.</p>
               <ul class="accordion__tags">
                 <li>Ускорение загрузки</li>
                 <li>Исправление вёрстки</li>
@@ -180,24 +214,76 @@
       <section class="section section--band section--cool" id="stack" aria-labelledby="stack-title">
         <h2 class="section__title reveal" id="stack-title">Мой стек</h2>
         <ul class="card stack reveal">
-          <li class="stack__item"><span class="stack__logo"><svg role="img" aria-label="React"><use href="#l-react"/></svg></span>React</li>
-          <li class="stack__item"><span class="stack__logo"><svg role="img" aria-label="Next.js"><use href="#l-next"/></svg></span>Next.js</li>
-          <li class="stack__item"><span class="stack__logo"><svg role="img" aria-label="TypeScript"><use href="#l-ts"/></svg></span>TypeScript</li>
-          <li class="stack__item"><span class="stack__logo"><svg role="img" aria-label="Node.js"><use href="#l-node"/></svg></span>Node.js</li>
-          <li class="stack__item"><span class="stack__logo"><svg role="img" aria-label="PostgreSQL"><use href="#l-pg"/></svg></span>PostgreSQL</li>
-          <li class="stack__item"><span class="stack__logo"><svg role="img" aria-label="Three.js"><use href="#l-three"/></svg></span>Three.js</li>
-          <li class="stack__item"><span class="stack__logo"><svg role="img" aria-label="Figma"><use href="#l-figma"/></svg></span>Figma</li>
-          <li class="stack__item"><span class="stack__logo"><svg role="img" aria-label="HTML"><use href="#l-html"/></svg></span>HTML</li>
-          <li class="stack__item"><span class="stack__logo"><svg role="img" aria-label="CSS"><use href="#l-css"/></svg></span>CSS</li>
-          <li class="stack__item"><span class="stack__logo"><svg role="img" aria-label="JavaScript"><use href="#l-js"/></svg></span>JavaScript</li>
-          <li class="stack__item"><span class="stack__logo"><svg role="img" aria-label="Git"><use href="#l-git"/></svg></span>Git</li>
-          <li class="stack__item"><span class="stack__logo"><svg role="img" aria-label="Claude"><use href="#l-claude"/></svg></span>Claude</li>
+          <li class="stack__item"><span class="stack__logo"><svg aria-hidden="true"><use href="#l-react"/></svg></span>React</li>
+          <li class="stack__item"><span class="stack__logo"><svg aria-hidden="true"><use href="#l-next"/></svg></span>Next.js</li>
+          <li class="stack__item"><span class="stack__logo"><svg aria-hidden="true"><use href="#l-ts"/></svg></span>TypeScript</li>
+          <li class="stack__item"><span class="stack__logo"><svg aria-hidden="true"><use href="#l-node"/></svg></span>Node.js</li>
+          <li class="stack__item"><span class="stack__logo"><svg aria-hidden="true"><use href="#l-pg"/></svg></span>PostgreSQL</li>
+          <li class="stack__item"><span class="stack__logo"><svg aria-hidden="true"><use href="#l-three"/></svg></span>Three.js</li>
+          <li class="stack__item"><span class="stack__logo"><svg aria-hidden="true"><use href="#l-figma"/></svg></span>Figma</li>
+          <li class="stack__item"><span class="stack__logo"><svg aria-hidden="true"><use href="#l-html"/></svg></span>HTML</li>
+          <li class="stack__item"><span class="stack__logo"><svg aria-hidden="true"><use href="#l-css"/></svg></span>CSS</li>
+          <li class="stack__item"><span class="stack__logo"><svg aria-hidden="true"><use href="#l-js"/></svg></span>JavaScript</li>
+          <li class="stack__item"><span class="stack__logo"><svg aria-hidden="true"><use href="#l-git"/></svg></span>Git</li>
+          <li class="stack__item"><span class="stack__logo"><svg aria-hidden="true"><use href="#l-claude"/></svg></span>Claude</li>
         </ul>
       </section>
+
+      <section class="section section--band section--warm" id="faq" aria-labelledby="faq-title">
+        <h2 class="section__title reveal" id="faq-title">Вопросы и ответы</h2>
+        <div class="card accordion reveal">
+          <details class="accordion__item">
+            <summary class="accordion__summary">
+              <span class="accordion__title">Сколько стоит сайт?</span>
+              <span class="accordion__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="accordion__body">
+              <p>Зависит от объёма: одностраничник дешевле интернет-магазина. Напишите задачу, и я назову цену до начала работы.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">
+              <span class="accordion__title">Сколько времени это займёт?</span>
+              <span class="accordion__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="accordion__body">
+              <p>Срок зависит от задачи. Обсудим её, и я скажу, когда будет первый прототип и когда запуск.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">
+              <span class="accordion__title">Что нужно от меня?</span>
+              <span class="accordion__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="accordion__body">
+              <p>Рассказать о задаче и показать сайты, которые вам нравятся. С текстами и фотографиями помогу, если их нет.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">
+              <span class="accordion__title">Вы правда пишете код с ИИ?</span>
+              <span class="accordion__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="accordion__body">
+              <p>Да. Claude помогает писать код быстрее, а за результат отвечаю я: проверяю, тестирую и довожу до запуска.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">
+              <span class="accordion__title">Что будет после запуска?</span>
+              <span class="accordion__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="accordion__body">
+              <p>Покажу, как обновлять сайт, и останусь на связи. Если понадобятся правки или новые разделы, напишите мне.</p>
+            </div>
+          </details>
+        </div>
+      </section>
     </div>
+    <div id="contact"></div>
   </main>
 
-  <footer class="site-footer" id="contact">
+  <footer class="site-footer">
     <div class="sky" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="site-footer__bar">
       <a class="logo" href="#top"><img class="logo__mark" src="img/logo.webp" alt="" width="32" height="32"><span>baxdro.tech</span></a>
